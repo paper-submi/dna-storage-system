@@ -1,3 +1,8 @@
+## Disclaimer
+This repository is a COPY of the official original repository, created by the original author itself.
+It is created to anonimize the submission of the paper for a conference.
+
+
 # Reliable DNA Storage System
 This branch contains all you need to create a container and run our DNA storage pipeline.
 By default, it will use 30% redundancy to encode data.
