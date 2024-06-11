@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+
+    <TITLE> Software for Low Density Parity Check Codes </TITLE>
+
+</HEAD>
+<BODY>
+
+
+<H1> Software for Low Density Parity Check Codes </H1>
+
+<P>This collection of programs and modules, written in C, is intended
+    to support research and education concerning Low Density Parity Check
+    (LDPC) codes. (Note, however, that the copyright notice no longer
+    restricts use to these purposes). These error-correcting codes were
+    invented by Robert Gallager in the early 1960's, and re-invented and
+    shown to have very good performance by David MacKay and myself in the
+    mid-1990's. The decoding algorithm for LDPC codes is related to that
+    used for Turbo codes, and to probabilistic inference methods used in
+    other fields. Variations on LDPC and Turbo codes are currently the
+    best practical codes known, in terms of their ability to transmit internal_buffer
+    at rates approaching channel capacity with very low error probability.
+
+<P>This is a fork of the original library by Radford Neal with the following major updates:
+<ol>
+    <li><b>Miscellaneous channel</b> - the original repository provided a few channels for decoding,
+        such as binary symmetric channel (BSC) and the additive white Gaussian noise (AWGN) channel.
+        However in many applications other channels are required. In general, the LDPC
+        decoding requires the channel only to compute the log-likelihood ratio (LLR). Thus,
+        we introduce a <code>misc</code> channel where the input_values to the LDPC decoder are the LLRs.
+        For any given channel, the LLRs can be computed from the received message and then the decoding can be
+        run with the <code>misc</code> channel. More details are provided <a href="channel.html">here</a> and <a
+                href="decoding.html#decode">here</a>.
+        This channel was utilized in <a href="https://github.com/shubhamchandak94/LDPC_DNA_storage">https://github.com/shubhamchandak94/LDPC_DNA_storage<a/>
+            for applying
+            LDPC codes for DNA storage, and was also used to enable puncturing in an extension of this library to
+            handle protograph LDPC codes
+            (<a href="https://github.com/shubhamchandak94/ProtographLDPC/">https://github.com/shubhamchandak94/ProtographLDPC/</a>).
+    </li>
+
+    <li><b>Extracting positions of message bits in codeword</b> - The original library provides an <code>extract</code>
+        functionality to obtain the
+        message bits from the codeword. We provide an additional method <code>extract_systematic</code> to extract the
+        positions of these bits in the codeword. This
+        can be useful for certain applications where we need to know where where the message bits reside within the
+        codeword.
+        The documentation is available
+        <a href="support.html#extract_systematic">here</a>.
+    </li>
+</ol>
+
+<P>The source code for this software is <A
+        HREF="http://github.com/shubhamchandak94/LDPC-codes">hosted at Github</A>.
+
+<P>Also see <a href="https://github.com/shubhamchandak94/ProtographLDPC/">https://github.com/shubhamchandak94/ProtographLDPC/</a>
+    which extends this library to construct protograph LDPC codes which can provide
+    both near-optimal asymptotic performance and excellent finite-block performance.
+
+<p>The past versions of the software are available <A
+        HREF="http://www.cs.utoronto.ca/~radford/ldpc.software.html">here</A>,
+    from <A HREF="http://www.cs.utoronto.ca/~radford/">Radford Neal<A>'s
+        web page. You can find the website for the original repository at
+        <A HREF="http://radfordneal.github.io/LDPC-codes/">http://radfordneal.github.io/LDPC-codes/</A>.
+
+<H2>Index to Documentation</H2>
+
+<A HREF="install.html">Download and installation instructions</A>
+<BLOCKQUOTE>
+    How to get and compile the programs and modules.
+</BLOCKQUOTE>
+<A HREF="progs.html">Software and program usage documentation</A>
+<BLOCKQUOTE>
+    General documentation on the methods implemented, and details of
+    program usage.
+</BLOCKQUOTE>
+<A HREF="examples.html">Examples of program usage</A>
+<BLOCKQUOTE>
+    Examples using simple Hamming codes, and using more interesting LDPC codes.
+</BLOCKQUOTE>
+<A HREF="modify.html">How to modify the programs</A>
+<BLOCKQUOTE>
+    Notes on how to add new channel types, new decoding methods, etc.
+</BLOCKQUOTE>
+<A HREF="modules.html">Module documentation</A>
+<BLOCKQUOTE>
+    Modules used by the programs for modulo-2 matrix
+    operations and random number generation.
+</BLOCKQUOTE>
+<A HREF="refs.html">References</A>
+<BLOCKQUOTE>
+    Classic and more recent papers on LDPC codes and related topics.
+</BLOCKQUOTE>
+
+<H2><A NAME="copyright">Copyright and Lack of Warranty</A></H2>
+
+<P> Except as otherwise specified, all of this software and
+    documentation is copyright &copy; 1995-2012 by Radford M. Neal.
+
+<P>Permission is granted for anyone to copy, use, modify, and distribute
+    these programs and accompanying documents for any purpose, provided
+    this copyright notice is retained and prominently displayed, and note
+    is made of any changes made to these programs. These programs and
+    documents are distributed without any warranty, express or implied.
+    As the programs were written for research purposes only, they have not
+    been tested to the degree that would be advisable in any important
+    application. All use of these programs is entirely at the user's own
+    risk.
+
+<P>Some routines in the module rand.c are taken from the GNU C Library,
+    and are copyrighted as described there and in the file LGPL.
+
+</BODY>
+</HTML>

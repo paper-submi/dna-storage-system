@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ab1fad3e-7884-4460-9157-48e63be34819" name="localhost">
+        <fileTransfer rootFolder="/home/eugenio" accessType="SFTP" host="localhost" port="6000" sshConfigId="697e6472-d3e2-4c8a-bc85-b7ee773a8f1b" sshConfig="eugenio@localhost:6000 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
