@@ -1,5 +1,5 @@
 # Reliable DNA Storage System
-This branch contains all you need to create a container and run our OA-DSM.
+This branch contains all you need to create a container and run our DNA storage pipeline.
 By default, it will use 30% redundancy to encode data.
 
 ## Installation
