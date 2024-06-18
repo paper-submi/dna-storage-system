@@ -3,7 +3,7 @@ This repository is a COPY of the official original repository, created by the or
 It is created to anonimize the submission of the paper for a conference.
 
 
-# Reliable DNA Storage System
+# RMS: Reliable Molecular Storage system
 This branch contains all you need to create a container and run our DNA storage pipeline.
 By default, it will use 30% redundancy to encode data.
 
